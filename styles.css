@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: 'Spartan', sans-serif;
+}
+
+body {
+  background: hsl(180, 52%, 96%);
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 80%;
+}
+
+.bg-header-desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: hsl(180, 29%, 50%);
+}
+
+input {
+  position: relative;
+  top: 133px;
+  width: 100%;
+  height: 46px;
+  padding-left: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size:1.4rem;
+  box-shadow: 0 10px 8px 0 hsl(180, 29%, 85%);
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.output {
+  position: relative;
+  top: 90px;
+  height: auto;
+}
+
+.company {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin: 40px 0;
+  background-color: #fff;
+  box-shadow: 0 10px 8px 0 hsl(180, 29%, 85%);
+  border-radius: 5px;
+}
+
+.company:first-of-type {
+  margin-top: 100px;
+}
+
+.output img {
+  height: 70%;
+  margin: 15px;
+}
+
+.heading {
+  position: absolute;
+  top: 18px;
+  left: 100px;
+  display: inline-block;
+  font-weight: 700;
+  color: hsl(180, 29%, 50%);
+}
+
+.new {
+  position: absolute;
+  top: 12px;
+  left: 176px;
+  margin-left: 10px;
+  width: fit-content;
+  vertical-align: center;
+  padding: 6px 5px 3px 5px;
+  font-weight: 700;
+  font-size: 10px;
+  color: white;
+  background-color: hsl(180, 29%, 50%);
+  border-radius: 10px;
+}
+
+.featured {
+  position: absolute;
+  top: 12px;
+  left: 224px;
+  width: fit-content;
+  vertical-align: center;
+  margin-left: 10px;
+  padding: 6px 5px 3px 5px;
+  font-weight: 700;
+  font-size: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.position {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  width: 100%;
+  font-weight: 700;
+}
+
+.roles {
+  position: absolute;
+  display: flex;
+  flex-flow: row;
+  top: 40px;
+  right: 0;
+}
+
+.roles p{
+  margin: auto 8px;
+  background-color: hsl(180, 31%, 95%);
+  color: hsl(180, 29%, 50%);
+  border-radius: 5px;
+  font-weight: 700;
+  padding: 8px;
+}
+
+.info p {
+  position: absolute;
+  top: 65px;
+  left: 100px;
+  font-size: 11px;
+  font-weight: 500;
+  color: hsl(180, 8%, 52%);
+}
