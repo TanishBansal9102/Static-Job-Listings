@@ -16,22 +16,24 @@ fetch('data.json')
   .then((res) => res.json())
   .then((data) => {
     companies = data;
+    companies.forEach(company => {
+      outputer(company);
+      list.innerHTML = output;
+    });
   })
-  
+
 input.addEventListener('keypress', checkFunction);
 
 function checkFunction(event) {
-  if (event.keyCode == '13')checker();
-}  
+  if (event.keyCode == '13') checker();
+}
 
 function checker() {
   inputData = input.value.split(" ");
   undefiner();
   arrayAssigner();
-  // console.log(inputData);
   output = '';
   companies.forEach(company => {
-    // console.log(dataLanguage, dataRole, dataTool, dataLevel);
     var categories = [company.languages, company.tools, company.role, company.level];
     if (dataLanguage == null && dataLevel == null && dataRole == null && dataTool == null) {
       outputer(company);
@@ -48,7 +50,7 @@ function checker() {
         outputer(company);
       }
     }
-    
+
   })
   list.innerHTML = output;
 }
@@ -61,7 +63,7 @@ function undefiner() {
 }
 
 function arrayAssigner() {
-  for (var i = 0 ; i < inputData.length ; i++){
+  for (var i = 0; i < inputData.length; i++) {
     if (roles.includes(inputData[i]) && dataRole == null) {
       dataRole = inputData[i];
     } else if (levels.includes(inputData[i]) && dataLevel == null) {
