@@ -64,14 +64,15 @@ function undefiner() {
 
 function arrayAssigner() {
   for (var i = 0; i < inputData.length; i++) {
-    if (roles.includes(inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1)) && dataRole == null) {
-      dataRole = (inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1));
-    } else if (levels.includes(inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1)) && dataLevel == null) {
-      dataLevel = (inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1));
-    } else if (languages.includes(inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1)) && dataLanguage == null) {
-      dataLanguage = (inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1));
-    } else if (tools.includes(inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1)) && dataTool == null) {
-      dataTool = (inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1));
+    var input = inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1);
+    if (roles.includes(input) && dataRole == null) {
+      dataRole = input;
+    } else if (levels.includes(input) && dataLevel == null) {
+      dataLevel = input;
+    } else if (languages.includes(input) && dataLanguage == null) {
+      dataLanguage = input;
+    } else if (tools.includes(input) && dataTool == null) {
+      dataTool = input;
     }
   }
 }
