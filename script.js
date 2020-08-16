@@ -6,9 +6,9 @@ var dataRole = null;
 const levels = ["Junior", "Midweight", "Senior"];
 var dataLevel = null;
 const languages = ["Python", "Ruby", "JavaScript", "HTML", "CSS"];
-var dataLanguage = null;
+var dataLanguages = [];
 const tools = ["React", "Sass", "Vue", "Django", "RoR"];
-var dataTool = null;
+var dataTools = [];
 var input = document.querySelector('input');
 var list = document.querySelector('.output');
 
@@ -35,11 +35,11 @@ function checker() {
   output = '';
   companies.forEach(company => {
     var categories = [company.languages, company.tools, company.role, company.level];
-    if (dataLanguage == null && dataLevel == null && dataRole == null && dataTool == null) {
+    if (dataLanguages == [] && dataLevel == null && dataRole == null && dataTools == []) {
       outputer(company);
     } else {
-      if ((categories[0].includes(dataLanguage) || dataLanguage == null) &&
-        (categories[1].includes(dataTool) || dataTool == null) &&
+      if ((includeChecker(categories[0], dataLanguages) || dataLanguages == []) &&
+        (includeChecker(categories[1], dataTools) || dataTools == []) &&
         (categories[2] == dataRole || dataRole == null) &&
         (categories[3] == dataLevel || dataLevel == null)) {
         for (var i = 0; i < categories.length; i++) {
@@ -58,8 +58,8 @@ function checker() {
 function undefiner() {
   dataRole = null;
   dataLevel = null;
-  dataLanguage = null;
-  dataTool = null;
+  dataLanguages = [];
+  dataTools = [];
 }
 
 function arrayAssigner() {
@@ -69,10 +69,10 @@ function arrayAssigner() {
       dataRole = input;
     } else if (levels.includes(input) && dataLevel == null) {
       dataLevel = input;
-    } else if (languages.includes(input) && dataLanguage == null) {
-      dataLanguage = input;
-    } else if (tools.includes(input) && dataTool == null) {
-      dataTool = input;
+    } else if (languages.includes(input)) {
+      dataLanguages.push(input);
+    } else if (tools.includes(input)) {
+      dataTools.push(input);
     }
   }
 }
@@ -103,4 +103,13 @@ function outputer(company) {
         </div>
       </div>
       `;
+}
+
+function includeChecker(category, arr) {
+  var c = 0;
+  arr.forEach(element => {
+    if(category.includes(element))c++;
+  });
+  if(c == arr.length)return true;
+  else return false;
 }
