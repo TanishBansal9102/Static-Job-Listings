@@ -162,10 +162,14 @@ textarea:focus, input:focus{
 }
 
 @media (max-width: 900px) {
-  
+  html, body {
+    overflow-x: hidden;
+  }
+
+
   .company {
   height: 190px;
-  margin: 40px 0;
+  width: 105%;
   background-color: #fff;
   }
 
@@ -173,8 +177,9 @@ textarea:focus, input:focus{
   position: static;
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
+  grid-column-gap: 0;
   margin-left: 10px;
  }
 
