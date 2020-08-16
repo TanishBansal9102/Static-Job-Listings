@@ -64,14 +64,14 @@ function undefiner() {
 
 function arrayAssigner() {
   for (var i = 0; i < inputData.length; i++) {
-    if (roles.includes(inputData[i]) && dataRole == null) {
-      dataRole = inputData[i];
-    } else if (levels.includes(inputData[i]) && dataLevel == null) {
-      dataLevel = inputData[i];
-    } else if (languages.includes(inputData[i]) && dataLanguage == null) {
-      dataLanguage = inputData[i];
-    } else if (tools.includes(inputData[i]) && dataTool == null) {
-      dataTool = inputData[i];
+    if (roles.includes(inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1)) && dataRole == null) {
+      dataRole = (inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1));
+    } else if (levels.includes(inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1)) && dataLevel == null) {
+      dataLevel = (inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1));
+    } else if (languages.includes(inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1)) && dataLanguage == null) {
+      dataLanguage = (inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1));
+    } else if (tools.includes(inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1)) && dataTool == null) {
+      dataTool = (inputData[i].charAt(0).toUpperCase() + inputData[i].slice(1));
     }
   }
 }
