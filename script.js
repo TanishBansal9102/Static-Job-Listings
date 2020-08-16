@@ -9,8 +9,9 @@ const languages = ["Python", "Ruby", "JavaScript", "HTML", "CSS"];
 var dataLanguages = [];
 const tools = ["React", "Sass", "Vue", "Django", "RoR"];
 var dataTools = [];
-var input = document.querySelector('input');
+var input = document.querySelector('#enter');
 var list = document.querySelector('.output');
+var clear = document.querySelector('#clear');
 
 fetch('data.json')
   .then((res) => res.json())
@@ -23,6 +24,22 @@ fetch('data.json')
   })
 
 input.addEventListener('keypress', checkFunction);
+
+clear.addEventListener('click', function() {
+  input.value = "";
+  undefiner();
+  list.innerHTML = " ";
+  fetch('data.json')
+    .then((res) => res.json())
+    .then((data) => {
+      companies = data;
+      output= '';
+      companies.forEach(company => {
+        outputer(company);
+        list.innerHTML = output;
+      });
+    })
+  });
 
 function checkFunction(event) {
   if (event.keyCode == '13') checker();
